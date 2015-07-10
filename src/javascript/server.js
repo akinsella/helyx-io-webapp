@@ -28,7 +28,13 @@ var authMiddleware = require('./middlewares/authMiddleware');
 var basicStrategy = require('./passport/strategies/basicStrategy');
 var bearerStrategy = require('./passport/strategies/bearerStrategy');
 var localStrategy = require('./passport/strategies/localStrategy');
-var googleStrategy = require('./passport/strategies/googleStrategy');
+var googleStrategy;
+
+
+if (config.auth.google.clientId) {
+	googleStrategy = require('./passport/strategies/googleStrategy');
+}
+
 var clientJWTBearerStrategy = require('./passport/strategies/clientJWTBearerStrategy');
 
 var role = require('./connect-roles-fixed');
@@ -73,7 +79,9 @@ apns.init();
 // TODO: Fix me to support ClientJWTBearerStrategy
 passport.serializeUser(authService.serializeUser);
 passport.deserializeUser(authService.deserializeUserFromUserId);
-passport.use(googleStrategy);
+if (googleStrategy) {
+	passport.use(googleStrategy);
+}
 passport.use(clientJWTBearerStrategy);
 passport.use(basicStrategy);
 passport.use(localStrategy);

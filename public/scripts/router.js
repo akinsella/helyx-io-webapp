@@ -40,10 +40,17 @@ helyxApp.run(function($rootScope, UsersApiService) {
 helyxApp.config(function ($stateProvider) {
 
 	$stateProvider
-		.state('app', {
-			url: '/app',
-			templateUrl: 'views/index.html',
-			controller: 'IndexCtrl',
+		.state('dashboard', {
+			url: '/dashboard',
+			views: {
+				header: {
+					templateUrl: 'views/header.html'
+				},
+				'': {
+					templateUrl: 'views/dashboard.html',
+					controller: 'DashboardCtrl'
+				}
+			},
 			data: {
 				requireLogin: true
 			}
@@ -84,8 +91,8 @@ helyxApp.config(function ($stateProvider) {
 				'$timeout','$state',
 				function($timeout,  $state ) {
 					$timeout(function() {
-						$state.go('app');
-					},0)
+						$state.go('dashboard');
+					}, 0);
 				}]
 		});
 });

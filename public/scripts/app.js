@@ -13,8 +13,7 @@ var helyxApp = angular.module('helyxApp');
 helyxApp.config(function($mdThemingProvider) {
 	$mdThemingProvider.theme('default')
 		.primaryPalette('pink')
-		.accentPalette('blue-grey')
-		.dark();
+		.accentPalette('blue-grey');
 });
 
 helyxApp.factory('Globals', function($rootScope) {
@@ -115,6 +114,6 @@ helyxApp.controller('AppCtrl', function($rootScope, $scope, $state, $mdDialog, U
 
 });
 
-helyxApp.controller('IndexCtrl', function($rootScope, $scope, $state) {
+helyxApp.controller('DashboardCtrl', function($rootScope, $scope, $state) {
 
 });

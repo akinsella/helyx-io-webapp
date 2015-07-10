@@ -4,11 +4,9 @@
 
 var express = require('express');
 
-var activityRoute = require('./activityRoute');
 var authRoute = require('./authRoute');
 var userRoute = require('./userRoute');
 var pemClientRoute = require('./pemClientRoute');
-var agencyRoute = require('./agencyRoute');
 
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -18,9 +16,7 @@ var agencyRoute = require('./agencyRoute');
 var router = express.Router({mergeParams: true});
 
 router.use('/users', userRoute);
-router.use('/activities', activityRoute);
 router.use('/auth', authRoute);
-router.use('/agencies', agencyRoute);
 router.use('/pem', pemClientRoute);
 
 // catch 404 and forward to error handler

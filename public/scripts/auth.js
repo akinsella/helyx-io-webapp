@@ -89,7 +89,7 @@ helyxApp.controller('LoginCtrl', function ($rootScope, $scope, $state, ngDialog,
 	$scope.login = function () {
 		UsersApiService.login($scope.username, $scope.password).then(function(user) {
 			$rootScope.currentUser = user;
-			location.href = '/#/tab.activities';
+			location.href = '/#/dashboard';
 		}).catch(function(err) {
 			alert("Failed to authenticate. Username and / or password mismatched. - Err: " + (err.message || JSON.stringify(err)));
 		});

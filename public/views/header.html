@@ -1,0 +1,27 @@
+<md-content>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+                <md-icon md-font-icon="ion-android-menu" />
+            </md-button>
+            <h2>
+                <span>Helyx.io</span>
+            </h2>
+            <span flex></span>
+
+            <md-menu md-offset="0 -5">
+                <md-button class="md-icon-button" aria-label="More" ng-click="$mdOpenMenu()">
+                    <md-icon md-font-icon="ion-android-more-vertical" />
+                </md-button>
+                <md-menu-content width="4">
+                    <md-menu-item ng-repeat="item in [1, 2, 3]">
+                        <md-button>
+                            <span md-menu-align-target>Option</span> {{item}}
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+
+        </div>
+    </md-toolbar>
+</md-content>

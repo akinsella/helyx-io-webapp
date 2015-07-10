@@ -1,10 +1,11 @@
 @font-face {
-    font-family: '"Ionicons"';
+    font-family: 'Ionicons';
+    src: url('../fonts/ionicons/ionicons.eot'); /* IE9 Compat Modes */
     src:
-        url('../fonts/ionicons/ionicons.eot') format('eot'),
-        url('../fonts/ionicons/ionicons.woff') format('woff'),
-        url('../fonts/ionicons/ionicons.ttf') format('truetype'),
-        url('../fonts/ionicons/ionicons.svg#Ionicons') format('svg');
+        url('../fonts/ionicons/ionicons.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('../fonts/ionicons/ionicons.woff') format('woff'), /* Pretty Modern Browsers */
+        url('../fonts/ionicons/ionicons.ttf') format('truetype'), /* Safari, Android, iOS */
+        url('../fonts/ionicons/ionicons.svg#Ionicons') format('svg'); /* Legacy iOS */
 }
 
 @font-face {
