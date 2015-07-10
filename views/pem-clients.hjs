@@ -1,0 +1,33 @@
+    <h1>{{ title }}</h1>
+
+    <a href="/pem-clients/generate">Generate One</a>
+    <table>
+	    <tr>
+		    <th>Id</th>
+		    <th>Private Key</th>
+            <th>Public Key</th>
+            <th>Certificate</th>
+            <th>Fingerprint</th>
+            <th>Key Password</th>
+            <th>Cert Password</th>
+            <th>Days</th>
+            <th>Infos</th>
+            <th>Created At</th>
+            <th>Actions</th>
+	    </tr>
+		{{#pems}}
+	    <tr>
+		    <td>{{id}}</td>
+		    <td><a href="/pem-clients/{{id}}/private-key">Download</a></td>
+		    <td><a href="/pem-clients/{{id}}/public-key">Download</a></td>
+            <td><a href="/pem-clients/{{id}}/certificate">Download</a></td>
+            <td>{{fingerprint}}</td>
+            <td>{{keyPassword}}</td>
+            <td>{{certPassword}}</td>
+            <td>{{days}}</td>
+            <td><a href="/pem-clients/{{id}}/certificate/infos">View</a></td>
+            <td>{{createdAt}}</td>
+            <td><a href="/pem-clients/{{id}}/remove">Supprimer</a></td>
+	    </tr>
+		{{/pems}}
+    </table>
